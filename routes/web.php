@@ -29,3 +29,7 @@ Route::get('/arraytojson', function () {
     return ['foo' => 'bar'];
 });
 
+Route::get('test', function () {
+    return view('test');
+});
+
