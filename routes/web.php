@@ -25,3 +25,7 @@ Route::get('/example', function () {
     return 'Example that laravel will create the view just from this';
 });
 
+Route::get('/arraytojson', function () {
+    return ['foo' => 'bar'];
+});
+
