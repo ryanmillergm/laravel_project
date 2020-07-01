@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/example', function () {
+    return 'Example that laravel will create the view just from this';
+});
+
