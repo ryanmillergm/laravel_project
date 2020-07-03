@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
 
@@ -29,7 +30,18 @@ Route::get('/arraytojson', function () {
     return ['foo' => 'bar'];
 });
 
+// Route::get('test', function () {
+//     $name = request('name');
+
+//     return view('test', [
+//         'name' => $name
+//     ]);
+// });
+// We can refactor the above to:
+
 Route::get('test', function () {
-    return view('test');
+    return view('test', [
+        'name' => request('name')
+    ]);
 });
 
