@@ -45,3 +45,4 @@ Route::get('test', function () {
     ]);
 });
 
+Route::get('/posts/{post}', 'PostsController@show');
