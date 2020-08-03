@@ -50,3 +50,7 @@ Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/contact', function() {
     return view('contact');
 });
+
+Route::get('/template', function() {
+    return view('template');
+});
