@@ -54,3 +54,7 @@ Route::get('/contact', function() {
 Route::get('/template', function() {
     return view('template');
 });
+
+Route::get('/about', function() {
+    return view('about');
+});
