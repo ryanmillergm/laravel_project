@@ -4,17 +4,25 @@
   <div id="wrapper">
     <div id="page" class="container">
       <div id="content">
+
         @foreach ($articles as $article)
           <ul>
             <li class="first">
-              <h3>
+              <h1>
                 <a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
-              </h3>
+              </h1>
               
-              <p>{{ $article->excerpt }}</p>
+              <br>
+
+              <p>
+                <img src="/images/banner.jpg" alt="" class="image image-full" /> 
+              </p>
+
+              <p>{{!! $article->excerpt !!}}</p>
             </li>
           </ul>
         @endforeach
+
       </div>
     </div>
   </div>
