@@ -8,9 +8,9 @@
         @foreach ($articles as $article)
           <ul>
             <li class="first">
-              <h1>
+              <h2>
                 <a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
-              </h1>
+              </h2>
               
               <br>
 
@@ -18,7 +18,7 @@
                 <img src="/images/banner.jpg" alt="" class="image image-full" /> 
               </p>
 
-              <p>{{!! $article->excerpt !!}}</p>
+              <p>{!! $article->excerpt !!}</p>
             </li>
           </ul>
         @endforeach
