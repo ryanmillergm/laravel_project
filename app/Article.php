@@ -13,10 +13,15 @@ class Article extends Model
         return view('articles.index', ['articles' => $articles]);
     }
 
-    public function show($id) 
+    public function show($id)
     {
         $article = Article::find($id);
 
         return view('articles.show', ['article' => $article]);
     }
+
+    // public function getRouteKeyName()
+    // {
+    //     return 'slug'; //Article::where('slug', $article)->first()
+    // }
 }
