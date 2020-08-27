@@ -28,21 +28,23 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
+        // $validatedAttrubutes = request()->validate([
+        //     'title' => ['required', 'min:3', 'max:255'],
+        //     'excerpt' => 'required',
+        //     'body' => 'required'
+        // ]);
 
         // Responsible for persisting the new Article
         // dump(request()->all());
-        $article = new Article();
+        // $article = new Article();
 
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
+        // $article->title = request('title');
+        // $article->excerpt = request('excerpt');
+        // $article->body = request('body');
 
-        $article->save();
+        // $article->save();
+
+        Article::create($this->validateArticle());
 
         return redirect('/articles');
     }
@@ -58,19 +60,8 @@ class ArticlesController extends Controller
 
     public function update(Article $article)
     {
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
 
-        // $article = Article::find($id);
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
+        $article->update($this->validateArticle());
 
         return redirect('/articles/' . $article->id);
     }
@@ -79,5 +70,17 @@ class ArticlesController extends Controller
     {
         // $article = Article::find($id);
 
+    }
+
+    /**
+     * @return array
+     */
+    public function validateArticle(): array
+    {
+        return request()->validate([
+            'title' => ['required', 'min:3', 'max:255'],
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
     }
 }
