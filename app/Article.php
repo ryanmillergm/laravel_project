@@ -27,4 +27,14 @@ class Article extends Model
     // {
     //     return 'slug'; //Article::where('slug', $article)->first()
     // }
+
+    public function path()
+    {
+        return route('articles.show', $this);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
