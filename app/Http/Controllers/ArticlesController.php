@@ -46,7 +46,7 @@ class ArticlesController extends Controller
 
         Article::create($this->validateArticle());
 
-        return redirect('/articles');
+        return redirect(route('articles.index'));
     }
 
     public function edit(Article $article)
@@ -63,7 +63,10 @@ class ArticlesController extends Controller
 
         $article->update($this->validateArticle());
 
-        return redirect('/articles/' . $article->id);
+        // return redirect('/articles/' . $article->id);
+        // return redirect(route('articles.show', $article));
+        // return redirect()->route('articles.show', $article);
+        return redirect($article->path());
     }
 
     public function destroy($id)
