@@ -5,7 +5,7 @@
     <div id="page" class="container">
       <div id="content">
 
-        @foreach ($articles as $article)
+        @forelse ($articles as $article)
           <ul>
             <li class="first">
               <h2>
@@ -22,7 +22,9 @@
               <p>{!! $article->excerpt !!}</p>
             </li>
           </ul>
-        @endforeach
+        @empty
+          <p>No relevant articles yet.</p>
+        @endforelse
 
       </div>
     </div>
