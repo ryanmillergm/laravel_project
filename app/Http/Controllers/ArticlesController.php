@@ -3,81 +3,87 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
     public function index()
     {
-        $articles = Article::latest()->get();
+        if (request('tag')) {
+            $articles = Tag::where('name', request('tag'))->firstOrFail()->articles;
+        } else {
+            $articles = Article::latest()->get();
+
+        }
 
         return view('articles.index', ['articles' => $articles]);
     }
 
-    public function show($id)
+    public function show(Article $article)
     {
-        $article = Article::find($id);
+        // $article = Article::findorfail($id);
 
         return view('articles.show', ['article' => $article]);
     }
 
     public function create()
     {
-        return view('articles.create');
+        return view('articles.create', [
+            'tags' => Tag::all()
+        ]);
     }
 
     public function store()
     {
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
+        $this->validateArticle();
 
-        // Responsible for persisting the new Article
-        // dump(request()->all());
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
+        $article = new Article(request(['title', 'excerpt', 'body']));
+        $article->user_id = 1; //auth()->id();
+        // auth()->user_id->articles()->create($article);
         $article->save();
 
-        return redirect('/articles');
+        $article->tags()->attach(request('tags'));
+
+        return redirect(route('articles.index'));
     }
 
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::find($id);
+        // $article = Article::find($id);
 
         // return view('articles.edit', ['article' => $article]);
         // PHP compact function does the same as above
         return view('articles.edit', compact('article'));
     }
 
-    public function update($id)
+    public function update(Article $article)
     {
-        request()->validate([
-            'title' => ['required', 'min:3', 'max:255'],
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
-        
-        $article = Article::find($id);
 
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
+        $article->update($this->validateArticle());
 
-        $article->save();
-
-        return redirect('/articles/' . $article->id);
+        // return redirect('/articles/' . $article->id);
+        // return redirect(route('articles.show', $article));
+        // return redirect()->route('articles.show', $article);
+        return redirect($article->path());
     }
 
     public function destroy($id)
     {
         // $article = Article::find($id);
 
+    }
+
+    /**
+     * @return array
+     */
+    public function validateArticle(): array
+    {
+        return request()->validate([
+            'title' => ['required', 'min:3', 'max:255'],
+            'excerpt' => 'required',
+            'body' => 'required',
+            'tags' => 'exists:tags,id'
+        ]);
     }
 }

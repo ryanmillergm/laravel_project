@@ -5,23 +5,26 @@
     <div id="page" class="container">
       <div id="content">
 
-        @foreach ($articles as $article)
+        @forelse ($articles as $article)
           <ul>
             <li class="first">
               <h2>
-                <a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
+                {{-- <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a> --}}
+                <a href="{{ $article->path() }}">{{ $article->title }}</a>
               </h2>
-              
+
               <br>
 
               <p>
-                <img src="/images/banner.jpg" alt="" class="image image-full" /> 
+                <img src="/images/banner.jpg" alt="" class="image image-full" />
               </p>
 
               <p>{!! $article->excerpt !!}</p>
             </li>
           </ul>
-        @endforeach
+        @empty
+          <p>No relevant articles yet.</p>
+        @endforelse
 
       </div>
     </div>

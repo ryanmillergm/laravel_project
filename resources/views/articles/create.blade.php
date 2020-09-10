@@ -61,6 +61,30 @@
                     </div>
                 </div>
 
+                <div class="field">
+                    <label class="label" for="body">Tags</label>
+
+                    <div class="select is-multiple control">
+                        <select
+                            name="tags[]"
+                            multiple
+                        >
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}" class="value">{{ $tag->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('tags')
+                            {{-- <p class="help is-danger">{{ $errors->first('tags') }}</p> --}}
+                            <p class="help is-danger">{{ $message }}</p>
+                        @enderror
+
+                        @error('body')
+                            <p class="help is-danger">{{ $errors->first('body') }}</p>
+                        @enderror
+                    </div>
+                </div>
+
                 <div class="field is-grouped">
                     <div id="control">
                        <button class="button is-link" type="submit">Submit</button>
