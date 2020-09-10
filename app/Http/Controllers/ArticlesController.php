@@ -29,28 +29,21 @@ class ArticlesController extends Controller
 
     public function create()
     {
-        return view('articles.create');
+        return view('articles.create', [
+            'tags' => Tag::all()
+        ]);
     }
 
     public function store()
     {
-        // $validatedAttrubutes = request()->validate([
-        //     'title' => ['required', 'min:3', 'max:255'],
-        //     'excerpt' => 'required',
-        //     'body' => 'required'
-        // ]);
+        $this->validateArticle();
 
-        // Responsible for persisting the new Article
-        // dump(request()->all());
-        // $article = new Article();
+        $article = new Article(request(['title', 'excerpt', 'body']));
+        $article->user_id = 1; //auth()->id();
+        // auth()->user_id->articles()->create($article);
+        $article->save();
 
-        // $article->title = request('title');
-        // $article->excerpt = request('excerpt');
-        // $article->body = request('body');
-
-        // $article->save();
-
-        Article::create($this->validateArticle());
+        $article->tags()->attach(request('tags'));
 
         return redirect(route('articles.index'));
     }
@@ -89,7 +82,8 @@ class ArticlesController extends Controller
         return request()->validate([
             'title' => ['required', 'min:3', 'max:255'],
             'excerpt' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'tags' => 'exists:tags,id'
         ]);
     }
 }
