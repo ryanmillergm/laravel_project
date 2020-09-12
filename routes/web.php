@@ -76,8 +76,24 @@ Route::resource('articles', 'ArticlesController');
 // Route::get('/articles/{article}/edit', 'ArticlesController@edit');
 // Route::put('/articles/{article}', 'ArticlesController@update');
 
+Route::get('/container', function () {
+
+    $container = new \App\Container();
+
+    $container->bind('example', function() {
+        return new \App\Example();
+    });
+
+    $example = $container->resolve('example');
+
+    $example->go();
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')
     ->name('home')
     ->middleware('auth');
+
+
