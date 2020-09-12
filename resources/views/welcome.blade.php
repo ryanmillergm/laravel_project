@@ -19,7 +19,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Ryan's Laravel Practice
+                    @auth
+                        {{ Auth::user()->name . __(' Laravel Project') }}
+                    @else
+                        Ryan's Laravel Practice
+                    @endauth
+                    <br>
+                    @guest
+                        Please Sign In
+                    @endguest
                 </div>
 
                 <div class="links">
