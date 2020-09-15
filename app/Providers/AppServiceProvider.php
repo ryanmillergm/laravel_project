@@ -13,7 +13,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('App\ExampleTwo', function () {
+            $collaborator = new Collaborator();
+            $foo = 'foobar';
+
+            return new ExampleTwo($collaborator, $foo);
+        });
     }
 
     /**
