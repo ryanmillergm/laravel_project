@@ -90,6 +90,25 @@ Route::get('/container', function () {
 });
 
 
+
+
+app()->bind('App\ExampleTwo', function () {
+    $collaborator = new \App\Collaborator();
+    $foo = 'foobar';
+
+    return new \App\ExampleTwo($collaborator, $foo);
+});
+
+//Route::get('container_two', function (App\ExampleTwo $example) {
+//    $example = resolve(App\ExampleTwo::class);
+//    $example = app()->make(App\ExampleTwo::class);
+
+//    ddd($example);
+//});
+
+Route::get('container_two', 'PagesController@home');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')
