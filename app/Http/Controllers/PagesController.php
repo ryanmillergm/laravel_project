@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\ExampleTwo;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\File;
 
 class PagesController extends Controller
 {
-    public function home(ExampleTwo $example)
+    public function home(Filesystem $file)
     {
-        ddd($example);
+
+        return $file->get(public_path('index.php'));
+
     }
 }
