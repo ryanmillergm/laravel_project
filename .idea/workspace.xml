@@ -19,13 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46425cf8-9d25-490b-8907-4249640b8d5c" name="Default Changelist" comment="" />
+    <list default="true" id="46425cf8-9d25-490b-8907-4249640b8d5c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/ExampleFacade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ExampleThree.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -140,6 +146,10 @@
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ggaViT2L2WmSC5Pzf2zI5hGcgW" />
@@ -152,6 +162,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -169,6 +180,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598538716363</updated>
       <workItem from="1598538718451" duration="1851000" />
+      <workItem from="1600107787984" duration="7660000" />
     </task>
     <task id="LOCAL-00001" summary="Updates articles">
       <created>1598540539014</created>
@@ -193,12 +205,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updates articles" />
     <option name="LAST_COMMIT_MESSAGE" value="Updates articles" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1600197452600">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser/0.23.1440.797@0.23.1440.797" timestamp="1600197452600" />
     <state x="523" y="174" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1598539748929">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
@@ -211,17 +228,25 @@
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="107" y="263" width="1200" height="557" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1598540359016" />
+    <state x="439" y="154" key="NewPhpClassDialog" timestamp="1600197271900">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="439" y="154" key="NewPhpClassDialog/0.23.1440.797@0.23.1440.797" timestamp="1600197271900" />
     <state x="523" y="346" key="ReplaceDuplicatesPrompt" timestamp="1598539788316">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="523" y="346" key="ReplaceDuplicatesPrompt/0.23.1440.797@0.23.1440.797" timestamp="1598539788316" />
-    <state x="518" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598538777076">
+    <state x="518" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600197773062">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
-    <state x="518" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.797@0.23.1440.797" timestamp="1598538777076" />
-    <state x="385" y="144" width="670" height="676" key="search.everywhere.popup" timestamp="1598539398926">
+    <state x="518" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.797@0.23.1440.797" timestamp="1600197773062" />
+    <state x="385" y="191" key="run.anything.popup" timestamp="1600115335031">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
-    <state x="385" y="144" width="670" height="676" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1598539398926" />
+    <state x="385" y="191" key="run.anything.popup/0.23.1440.797@0.23.1440.797" timestamp="1600115335031" />
+    <state x="385" y="144" width="670" height="676" key="search.everywhere.popup" timestamp="1600197782652">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="385" y="144" width="670" height="676" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1600197782652" />
   </component>
 </project>
