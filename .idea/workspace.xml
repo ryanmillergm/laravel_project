@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46425cf8-9d25-490b-8907-4249640b8d5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/ExampleFacade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ExampleThree.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +176,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598538716363</updated>
       <workItem from="1598538718451" duration="1851000" />
-      <workItem from="1600107787984" duration="7660000" />
+      <workItem from="1600107787984" duration="8222000" />
     </task>
     <task id="LOCAL-00001" summary="Updates articles">
       <created>1598540539014</created>
@@ -236,17 +232,17 @@
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="523" y="346" key="ReplaceDuplicatesPrompt/0.23.1440.797@0.23.1440.797" timestamp="1598539788316" />
-    <state x="518" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600197773062">
+    <state x="518" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600267848541">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
-    <state x="518" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.797@0.23.1440.797" timestamp="1600197773062" />
+    <state x="518" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.797@0.23.1440.797" timestamp="1600267848541" />
     <state x="385" y="191" key="run.anything.popup" timestamp="1600115335031">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="385" y="191" key="run.anything.popup/0.23.1440.797@0.23.1440.797" timestamp="1600115335031" />
-    <state x="385" y="144" width="670" height="676" key="search.everywhere.popup" timestamp="1600197782652">
+    <state x="385" y="144" width="670" height="676" key="search.everywhere.popup" timestamp="1600267862201">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
-    <state x="385" y="144" width="670" height="676" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1600197782652" />
+    <state x="385" y="144" width="670" height="676" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1600267862201" />
   </component>
 </project>
