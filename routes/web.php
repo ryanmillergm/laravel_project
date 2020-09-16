@@ -47,9 +47,8 @@ Route::get('test', function () {
 
 Route::get('/posts/{post}', 'PostsController@show');
 
-Route::get('/contact', function() {
-    return view('contact');
-});
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
 
 Route::get('/template', function() {
     return view('template');
