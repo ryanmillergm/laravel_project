@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\ExampleTwo;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Facades\File;
+
+use Illuminate\Support\Facades\Cache;
 
 class PagesController extends Controller
 {
-    public function home(Filesystem $file)
+    public function home()
     {
+        Cache::remember('foo', 60, fn() => 'foobar');
 
-        return $file->get(public_path('index.php'));
-
+        return Cache::get('foo');
     }
 }
