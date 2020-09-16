@@ -9,7 +9,7 @@
 
           <div class="card-body">
 
-            <form>
+            <form method="POST" action="/contact">
               @csrf
               <div class="form-group row">
                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
@@ -27,6 +27,13 @@
                   <button type="submit" class="btn btn-outline-primary">
                     Contact Us
                   </button>
+
+                  @if (session('message'))
+                    <p class="text-green-500 mt-2">
+                        {{ session('message') }}
+                    </p class="text-green-500 text-xs mt-2">
+                  @endif
+
                 </div>
               </div>
             </form>
