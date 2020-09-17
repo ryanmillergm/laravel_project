@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+@component('mail::message')
+# A heading
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam corrupti animi impedit ad natus iste minus nesciunt saepe est accusantium.
+
+- A list
+- goes
+- here
+
+@component('mail::button', ['url' => 'https://laracasts.com'])
+    Visit Laracasts
+@endcomponent
+
+@endcomponent
+
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,4 +27,4 @@
 
     <p>It sounds like you want to hear more about {{ $topic }}.</p>
 </body>
-</html>
+</html> --}}
