@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
+Route::post('payments', 'PaymentsController@store')->middleware('auth');
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -47,9 +50,8 @@ Route::get('test', function () {
 
 Route::get('/posts/{post}', 'PostsController@show');
 
-Route::get('/contact', function() {
-    return view('contact');
-});
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
 
 Route::get('/template', function() {
     return view('template');
