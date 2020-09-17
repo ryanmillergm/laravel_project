@@ -31,7 +31,7 @@
                   @if (session('message'))
                     <p class="text-green-500 mt-2">
                         {{ session('message') }}
-                    </p class="text-green-500 text-xs mt-2">
+                    </p>
                   @endif
 
                 </div>
